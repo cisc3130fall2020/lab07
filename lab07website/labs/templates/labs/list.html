@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'labs/style.css'%}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+	<h1>Coding Portfolio</h1>
+      </div>
+      <div class="left">
+	<img class="headshot" src="{% static 'labs/corporate.jpg' %}">
+      </div>
+      <div class="right">
+	<p>Hi, I'm Mark MacEachen, a second year CS student at Brooklyn College. Please click any of the links below to see some of the projects I've worked on.</p>
+	<ul class="clean">
+	  {% for lab in lab_list %}
+	  <li><a href="{% url 'labs:lab_detail' lab.number %}">{{ lab }}</a></li>
+	  {% endfor %}
+	  <li><a href="https://favisbook.com">favisbook.com</a></li>
+	</ul>
+	<table>
+	  <th colspan="2">Contact info</th>
+	  <tr>
+	    <td>Email:</td>
+	    <td><a href="mailto:mark.maceachen@gmail.com"> mark.maceachen@gmail.com</a></td>
+	  </tr>
+	  <tr>
+	    <td>Phone:</td>
+	    <td>(917) 371-4411</td>
+	  </tr>
+	</table>
+      </div>
+    </div>
+  </body>
+</html>

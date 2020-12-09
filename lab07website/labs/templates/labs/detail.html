@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'labs/style.css'%}"/>    
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+	<h1><a class="clean" href="/labs">Coding Portfolio</a></h1>
+      </div>
+      <div class="left">
+	<h2>{{ lab }}</h2>
+	<p>Problem Description: <a href="{{ lab.description }}">notion.so</a></p>
+	<p>Solution: <a href="{{ lab.lab_url }}">github.com</a></p>
+      </div>
+    </div>
+  </body>
+</html>
